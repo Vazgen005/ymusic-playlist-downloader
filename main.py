@@ -10,6 +10,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 symbols = ['\\', '/', ':', '*', '?', '"', '<', '>', '|']
 url = ''
 
+
 if os.path.exists('config.json'):
     with open('config.json', 'r') as f:
         try:
