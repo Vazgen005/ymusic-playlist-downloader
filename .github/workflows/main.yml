@@ -1,17 +1,26 @@
-name: Python package
+name: Package exe with PyInstaller - Windows
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.10"]
-        exclude:
-          - os: macos-latest
-            python-version: "3.10"
-          - os: windows-latest
-            python-version: "3.10"
+        python-version: [ "3.10" ]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: PyInstaller Windows
+      uses: JackMcKew/pyinstaller-action-windows@main
+      with:
+        path: src
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-exe
