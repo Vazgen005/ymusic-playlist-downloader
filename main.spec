@@ -4,7 +4,7 @@
 block_cipher = None
 
 
-a = Analysis(['main.py'],
+a = Analysis(['src\\main.py'],
              pathex=[],
              binaries=[],
              datas=[],
@@ -37,4 +37,4 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='C:\\Users\\vaz05\\Documents\\GitHub\\ymusic-playlist-downloader\\resources\\icon_main.ico')
+          entitlements_file=None , icon='resources\\icon_main.ico')
