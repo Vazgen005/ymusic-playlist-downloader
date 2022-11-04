@@ -1,10 +1,11 @@
 import yandex_music
 import logging
+import asyncio
 import json
 import sys
 import os
 import re
-import asyncio
+
 
 logging.getLogger().setLevel(logging.DEBUG)
 
@@ -105,5 +106,5 @@ class Downloads:
 if __name__ == "__main__":
     client = Client().login()
     Downloads_ = Downloads()
-    asyncio.run(Downloads_.download_tracks(Downloads_.playlist_parser(url="https://music.yandex.ru/users/yamusic-premiere/playlists/115003794")))
+    asyncio.run(Downloads_.download_tracks(Downloads_.playlist_parser(url=input("Please, enter a url to a playlist: "))))
     print('Done!')
