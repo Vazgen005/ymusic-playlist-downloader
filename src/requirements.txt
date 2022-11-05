@@ -1,1 +1,2 @@
 yandex_music
+rich
